@@ -1,10 +1,11 @@
 {
-  "name": "Minimum configuration",
-  "image": "mcr.microsoft.com/devcontainers/base:alpine",
+  "name": "python configuration",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
   "containerEnv": {
     "TZ": "Asia/Tokyo"
   },
   "runArgs": ["--init"],
+  "postCreateCommand": "pip install -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -22,7 +23,11 @@
         "donjayamanne.githistory",
         "eamodio.gitlens",
         "mhutchie.git-graph",
-        "GitHub.vscode-github-actions"
+        "GitHub.vscode-github-actions",
+        // python
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff"
       ],
       "settings": {
         // common
@@ -34,9 +39,14 @@
         "editor.formatOnSave": true,
         "editor.formatOnPaste": true,
         "editor.codeActionsOnSave": {
-          "source.fixAll": "explicit"
+          "source.fixAll": "explicit",
+          "source.organizeImports": "explicit"
         },
         "editor.defaultFormatter": "esbenp.prettier-vscode",
+        // python
+        "[python]": {
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
         // Todo Tree config
         "todo-tree.general.tags": [
           "TODO",
