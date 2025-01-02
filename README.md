@@ -1,12 +1,12 @@
-# template-minimum
+# template-python
 
-Minimum Settings Container
+python Settings Container
 
 # environment
 
 ## use images
 
-- [mcr.microsoft.com/devcontainers/base:alpine](https://hub.docker.com/r/microsoft/vscode-devcontainers)
+- [mcr.microsoft.com/devcontainers/python:3.13](https://hub.docker.com/r/microsoft/vscode-devcontainers)
 
 # example Codespace
 
